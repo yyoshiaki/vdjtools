@@ -20,8 +20,8 @@ RUN echo "===> install Java"  && \
     echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections  && \
     DEBIAN_FRONTEND=noninteractive  apt-get install -y --force-yes oracle-java8-installer oracle-java8-set-default
 
-RUN wget https://github.com/mikessh/vdjtools/archive/1.1.9.zip
+RUN wget https://github.com/mikessh/vdjtools/releases/download/1.1.9/vdjtools-1.1.9.zip
 RUN unzip 1.1.9.zip
 ENV PATH $PATH:$HOME/vdjtools-1.1.9
 
-# RUN vdjtools Rinstall
+RUN vdjtools Rinstall
